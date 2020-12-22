@@ -115,7 +115,7 @@ public class MainActivity extends AppCompatActivity {
                 else {
                     Toast.makeText(getApplicationContext(), "Datos guardados en la base de datos exitosamente", Toast.LENGTH_LONG).show();
                     AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                            AppDatabase.class, "recuperatorio-db").build();
+                            AppDatabase.class, "recuperatorio-db").allowMainThreadQueries().build();
                     Datos datos = new Datos(etNombre.getText().toString(), etApellido.getText().toString(),
                             etCalle.getText().toString(), etNumero.getText().toString());
                     db.datosDao().insertar(datos);
@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 AppDatabase db = Room.databaseBuilder(getApplicationContext(),
-                        AppDatabase.class, "recuperatorio-db").build();
+                        AppDatabase.class, "recuperatorio-db").allowMainThreadQueries().build();
                 List<Datos> listaDatos = db.datosDao().buscarDatos();
                 String datosRecuperados;
                 for (int i = 0; i < listaDatos.size(); i++){

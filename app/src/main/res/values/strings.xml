@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Recuperatorio_DAM</string>
+    <string name="nombre">Nombre</string>
+    <string name="apellido">Apellido</string>
+    <string name="calle">Calle</string>
+    <string name="numero">Numero</string>
+    <string name="titulo">Bienvenido a la app de recuperatorio.</string>
+    <string name="borrar_campos">Borrar datos</string>
+    <string name="saludar">Saludo!</string>
+    <string name="cambiar_titulo">Cambiar Titulo</string>
+    <string name="guardar">Guardar datos</string>
+    <string name="boton_guardar_deshabilitado">TOQUE AQUÍ PARA HABILITAR EL BOTÓN GUARDAR</string>
+    <string name="boton_guardar_habilitado">TOQUE AQUÍ PARA DESHABILITAR EL BOTÓN GUARDAR</string>
+    <string name="mostrar">Mostrar datos</string>
 </resources>

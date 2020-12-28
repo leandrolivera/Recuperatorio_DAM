@@ -17,6 +17,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import ar.com.leandroolivera.recuperatorio_dam.model.Datos;
@@ -31,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
     Button btnTitulo, btnBorrar, btnSaludo, btnGuardar, btnMostrar;
     ListView listViewDatos;
     String nuevoTitulo, tituloOriginal;
-    List<String> listaRecuperados = null;
-    private ArrayAdapter<String> adapter;
+    List<String> listaRecuperados = new ArrayList<>();
+    private ArrayAdapter<String> adapter = null;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,7 +134,7 @@ public class MainActivity extends AppCompatActivity {
                 AppDatabase db = Room.databaseBuilder(getApplicationContext(),
                         AppDatabase.class, "recuperatorio-db").allowMainThreadQueries().build();
                 List<Datos> listaDatos = db.datosDao().buscarDatos();
-                String datosRecuperados;
+                String datosRecuperados = null;
                 for (int i = 0; i < listaDatos.size(); i++){
                     datosRecuperados = "Nombre: "+listaDatos.get(i).getNombre()+" "+"Apellido: "+listaDatos.get(i).getApellido()+" "+"Direccion: "+listaDatos.get(i).getCalle()+" "+listaDatos.get(i).getNumero();
                     listaRecuperados.add(datosRecuperados);
